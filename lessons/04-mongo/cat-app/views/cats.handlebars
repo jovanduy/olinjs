@@ -1,0 +1,13 @@
+<!-- handlebars help/code for comma separating colors: http://handlebarsjs.com/builtin_helpers.html -->
+<h1><a href="/">Cat App!</a></h1>
+<h2>{{message}}</h2>
+<ul>
+	{{#each cats}}
+	<li>{{name}}
+    	<ul>
+      		<li>Age: {{age}}</li>
+      		<li>Color: {{#each color}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</li>
+    	</ul>
+  	</li>
+  	{{/each}}
+</ul>
