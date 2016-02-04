@@ -36,5 +36,7 @@ app.use('/cats', cats);
 // app.get('/robots');
 
 mongoose.connect('mongodb://localhost/test');
-
-app.listen(3000);
+//Generally its good to include a print statement to know when the app has started.
+app.listen(3000, function(){
+	console.log("Listening on Port 3000");
+});

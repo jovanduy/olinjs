@@ -59,14 +59,18 @@ router.get('/new', function(req, res) {
 	console.log(colors);
 	var catAge = getRandomNumber(0, 500);
 	var cat = new Cat({name: catNames[nameNum], age: catAge, color: colors});
-
+	//Generally, if a action was not completed on the server, send an error to the client.
+	//Also, generally do not finish a request until you know if nothing bad will happen. 
 	cat.save(function (err) {
   		if (err) {
     		console.log("Problen saving your cat :(", err);
+    		res.status(500).send("Error saving cat.");
+  		} else {
+  			res.render("cats", {"message": "New cat created:", "cats": [cat]});
   		}
 	});
 	
-	res.render("cats", {"message": "New cat created:", "cats": [cat]});
+	
 });
 
 router.get('/bycolor/:color', function showByColor (req, res) {
