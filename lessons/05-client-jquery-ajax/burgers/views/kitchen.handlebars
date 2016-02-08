@@ -1,0 +1,14 @@
+<h1><a href="/">Burgers!</a></h1>
+
+<h2 id="kitchenMessage">{{kitchenMessage}}</h2>
+<ul>
+    {{#each orders}}
+        <li class="orders {{_id}}">{{name}}: <button type="button" class="complete-btn" id={{_id}}>Completed</button>
+            <ul>
+                {{#each this.ingredients}}
+                    <li>{{this}}
+                {{/each}} 
+            </ul>
+        </li>
+    {{/each}}
+</ul>

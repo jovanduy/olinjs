@@ -1,0 +1,40 @@
+<h1><a href="/">Burgers!</a></h1>
+
+<h2 id="inStockMessage">{{inStockMessage}}</h2>
+<div id="inStock">
+	{{#each inStockIngredients}}
+		<form class="inStock" id={{_id}} action="makeOutOfStock" method="POST">
+			<p>{{name}}: ${{price}}</p>
+			<input type="button" class="edit" value="Edit">
+			<input type="submit" class="submit" value="Out of Stock">
+		</form>
+	{{/each}}
+    <form class="fakeInStock" id="id" action="makeOutOfStock" method="POST" style="display:none;">
+		<p></p>
+		<input type="button" class="edit" value="Edit">
+		<input type="submit" class="submit" value="Out of Stock">
+	</form>
+</div>
+
+<h2 id="outOfStockMessage">{{outOfStockMessage}}</h2>
+<div id="outOfStock">
+    {{#each outOfStockIngredients}}
+        <form class="outOfStock" id={{_id}} action="restock" method="POST">
+            <p>{{name}}: ${{price}}</p>
+            <input type="button" class="edit" value="Edit">
+            <input type="submit" class="submit" value="Restock">
+        </form>
+    {{/each}}
+    <form class="fakeOutOfStock" id={{_id}} action="restock" method="POST" style="display:none;">
+        <p></p>
+        <input type="button" class="edit" value="Edit">
+        <input type="submit" class="submit" value="Restock">
+    </form>
+</div>
+
+<h2>Add Ingredient</h2>
+<form id="addIngredient" action="newIngredient" method="POST">
+    Name: <input type="text" name="name"/><br/>
+    Price: $<input type="number" step="0.01" min="0" name="price"/><br/>
+    <input type="submit" value="Add">
+</form>
