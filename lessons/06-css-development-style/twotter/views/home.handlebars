@@ -1,0 +1,44 @@
+<h1>Twotter!</h1>
+
+
+<div id="leftSide">
+    {{#each names}}
+        <form id="make-twote" onsubmit="submitTwote()" method="POST">
+            <p>Twote:<p></br>
+            <input type="text" name="twote">
+            <input type="submit" class="button submit" value="Submit"><br>
+            <p class="name">{{this.name}}</p>
+        </form>
+    {{/each}}
+
+    <div id="twoteList">
+        {{#each twotes}}
+            <div class="twote {{this.author}}">
+                <p class="text">{{this.text}}</p>
+                <p class="author">{{this.author}}</p>
+                <button type="button" class="button delete">Delete</button>
+            </div>
+        {{/each}}
+    </div>
+
+    <div class="fakeTwote" style="display:none;">
+        <p class="text">{{text}}</p></br>
+        <p class="author">{{author}}</p>
+        <button type="button" class="button delete">Delete</button>
+    </div>
+</div>
+
+
+<div id="rightSide">
+    <a id="login" class="button" href="/login">Login</a>
+    <button type="button" id="logout" class="button" onclick="logout()">Logout</button>
+
+    <div id="users">
+        <p>Users</p>
+        {{#each users}}
+            <div id={{this.name}} class="users" onclick="highlightTwotes(this.id)">
+                <p>{{this.name}}</p>
+            </div>
+        {{/each}}
+    </div>
+</div>

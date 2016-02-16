@@ -1,0 +1,80 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+    /*margin: 1vw;*/
+	color: gray;
+}
+
+#top-bar {
+    /*padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;*/
+    background-color: #66c2ff;
+}
+
+#heading {
+    font-size: 200%;
+}
+
+#make-twote {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: grey;
+    background-color: #d8d7d9;
+    box-shadow: 1px 1px 1px grey;
+    margin: 10px;
+}
+
+#rightSide {
+    float: right;
+}
+
+#leftSide {
+    float: left;
+}
+
+.users {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: grey;
+    background-color: #d8d7d9;
+    box-shadow: 1px 1px 1px grey;
+    margin: 10px;
+}
+
+.twote {
+    word-wrap: break-word;
+    background-color: #d8d7d9;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin: 10px;
+    box-shadow: 1px 1px 1px grey;
+}
+
+.highlighted {
+    background-color: slategrey !important;
+}
+
+.button {
+    background-color: #99ebff;
+    border: none;
+    color: gray;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /*font-size: 16px;*/
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    font-size: 75%
+}
