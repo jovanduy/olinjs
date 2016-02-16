@@ -65,7 +65,7 @@ routes.submit = function(req, res) {
 
 routes.delete = function (req, res) {
     Twote.remove({'text':req.body.text}, function (err) {
-        
+        res.status(500).send("Error!!! " + err)
     });
     console.log(req.body.text);
     res.send({"text":req.body.text});
