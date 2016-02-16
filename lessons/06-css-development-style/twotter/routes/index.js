@@ -6,7 +6,6 @@ var routes = {};
 routes.main = function(req, res) {
     var name = req.user;
     console.log(name);
-    // var user = {}
     User.find({})
         .exec(function (err, users) {
             if (err) {
@@ -21,7 +20,6 @@ routes.main = function(req, res) {
                                 res.status(500).send("Error! Cannot find any twotes!");
                             } else {
                                 if (name) {
-                                    // user.name = name;
                                     res.render("home", {"users": users, "twotes": twotes.reverse(), "names": [name]});
                                 } else {
                                     res.render("home", {"users": users, "twotes": twotes.reverse()});
