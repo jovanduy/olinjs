@@ -47,11 +47,10 @@ passport.deserializeUser(function(id, done) {
 app.get('/', index.main);
 app.get('/login', index.loginPage);
 
-app.post('/login', index.login);
+// app.post('/login', index.login);
 app.post('/logout', index.logout);
-app.post('/twotes', index.submit);
-
-app.post('/twotes/delete', index.delete);
+app.post('/twotes', ensureAuthenticated, index.submit);
+app.post('/twotes/delete', ensureAuthenticated, index.delete);
 
 app.get('/auth/facebook', passport.authenticate('facebook'), function(req, res){});
 app.get('/auth/facebook/callback',

@@ -4,8 +4,9 @@ var Twote = require('../models/twoteModel.js');
 var routes = {};
 
 routes.main = function(req, res) {
-    var name = req.session.name;
-    var user = {}
+    var name = req.user;
+    console.log(name);
+    // var user = {}
     User.find({})
         .exec(function (err, users) {
             if (err) {
@@ -20,8 +21,8 @@ routes.main = function(req, res) {
                                 res.status(500).send("Error! Cannot find any twotes!");
                             } else {
                                 if (name) {
-                                    user.name = name;
-                                    res.render("home", {"users": users, "twotes": twotes.reverse(), "names": [user]});
+                                    // user.name = name;
+                                    res.render("home", {"users": users, "twotes": twotes.reverse(), "names": [name]});
                                 } else {
                                     res.render("home", {"users": users, "twotes": twotes.reverse()});
                                 }
@@ -51,8 +52,8 @@ routes.login = function(req, res) {
 }
 
 routes.logout = function(req, res) {
-    req.session.name = undefined;
-    res.redirect('/login');
+    req.logout();
+    res.redirect('/');
 }
 
 routes.submit = function(req, res) {
