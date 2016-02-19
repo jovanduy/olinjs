@@ -15,6 +15,7 @@ var onOrderError = function (data, status) {
     console.log("error", data);
 }
 
+// Check if ingredients exist to make order and render message that prompts user to checkout index
 $orderForm.submit(function (event) {
     // getting ids of checked checkboxes:
     // http://stackoverflow.com/questions/6901242/jquery-get-the-ids-of-the-checked-and-not-checked-checkbox/6901730#6901730

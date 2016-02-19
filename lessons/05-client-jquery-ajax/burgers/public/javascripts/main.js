@@ -92,6 +92,8 @@ var onEditSuccess = function (data, status) {
     }
 }
 
+// Instead of using prompt render a new form that allows you to update teh fields instead of having them be 
+// sequencial prompts. Hence you can only render one of the two :)
 function editClick () {
     $edit.click(function () {
         var $form = $(event.target).closest('form');
