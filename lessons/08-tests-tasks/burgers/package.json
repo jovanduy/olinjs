@@ -1,0 +1,33 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "kerberos": "0.0.18",
+    "mongoose": "^4.4.1",
+    "morgan": "^1.6.1",
+    "nodemon": "^1.8.1"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "istanbul": "^0.4.1",
+    "karma": "^0.13.19",
+    "karma-mocha": "^0.2.1",
+    "mocha": "^2.3.4",
+    "supertest": "^1.1.0"
+  },
+  "scripts": {
+    "jshint": "jshint --exclude-path ./.gitignore . || exit 0",
+    "mocha": "./node_modules/mocha/bin/mocha tests/server --recursive || exit 0",
+    "cover-mocha": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha tests/server -- --recursive -R spec || exit 0",
+    "test": "npm run cover-mocha",
+    "start": "node app.js"
+  }
+}

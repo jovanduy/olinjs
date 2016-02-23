@@ -1,0 +1,27 @@
+<h2>Things to do: {{getTotalTodos()}}</h2>
+
+<form class="form">
+    <input class="originalInput" type="text" ng-model="formTodoText" ng-model-instant>
+    <button class="btn" ng-click="addTodo()">Add</button>
+    <!--{{formTodoText}}-->
+</form>
+
+<ul>
+    <li class="todos" ng-repeat="todo in todos | filter : filterByCompleted">
+        <input type="checkbox" ng-model="todo.done">
+        <span class="{{todo.done}}" ng-hide="todo.editing" ng-dblclick="editTodo(todo)">{{todo.text}}</span>
+        <form class="editForm" ng-submit="doneEditing(todo)" ng-show="todo.editing">
+            <input class="editInput" size="10" ng-model="todo.text" ng-init="{{todo.text}}">
+        </form>    
+    </li>
+</ul>
+
+<ul class="filter">
+    <li class="filter" ng-class="{'selected' : show == '' }" ng-click="show=''"><button class='btn'>All</button></li>
+    <li class="filter" ng-class="{'selected' : show == 'Active' }" ng-click="show='Active'"><button class='btn'>Active</btn></li>
+    <li class="filter" ng-class="{'selected' : show == 'Completed' }" ng-click="show='Completed'"><button class='btn'>Completed</btn></li>
+</ul>
+
+<br>
+
+<button class="btn" ng-click="clearCompleted()">Clear Completed</button>

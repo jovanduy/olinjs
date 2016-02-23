@@ -1,0 +1,68 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+    /*margin: 1vw;*/
+	color: gray;
+    /*position: absolute;*/
+    display: flex;
+    justify-content: center;
+    width: 400;
+}
+
+h2 {
+    font-size: 200%;
+}
+
+ul {
+    list-style-type: none;
+    justify-content: center;;
+}
+
+input {
+    color: 666666;
+    border: none;
+    font-size: 110%;
+}
+
+.originalInput {
+    padding: 10px;
+    border-bottom: solid 2px #c9c9c9;
+}
+
+.editForm {
+    display: inline;
+}
+
+/*.editInput {
+    size: 30;
+}*/
+
+.todos {
+    font-size: 115%;
+}
+
+.filter {
+    display: inline;
+    justify-content: flex-start;
+}
+
+.btn {
+    background-color: #cccccc;
+    border: none;
+    color: gray;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    font-size: 75%
+}
+
+.true{
+    text-decoration: line-through;
+    color: gray;
+}

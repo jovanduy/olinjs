@@ -1,0 +1,25 @@
+<h1><a href="/">Burgers!</a></h1>
+
+<h2 id="orderMessage">{{orderMessage}}</h2>
+
+<form class="orderForm" action="order" method="POST">
+  Name: <input type="text" name="name"><br>
+  {{#each ingredients}}
+    <input type="checkbox"
+        class="ingredients"
+        id={{_id}}
+        name={{name}}
+        value={{price}}
+        {{#unless inStock}}
+            disabled
+	   {{/unless}}>
+       <span 
+           {{#unless inStock}} 
+               style="color:gray"
+	       {{/unless}}>
+               {{name}}: ${{price}}
+       </span><br>
+  {{/each}}
+  <p>Total price: $<span id="price">0.00</span></p>
+  <input type="submit" class="submit" value="Submit">
+</form>
