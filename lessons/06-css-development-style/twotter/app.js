@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 var passport = require('passport');
 
-
+// do you need to import auth here
 var auth = require('./auth');
 var fbAuth = require('./authentication.js');
 var index = require('./routes/index');

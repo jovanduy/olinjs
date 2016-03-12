@@ -6,6 +6,7 @@ var routes = {};
 routes.main = function(req, res) {
     var name = req.user;
     console.log(name);
+    //you don't need the .execs, you could put the callbacks in the find
     User.find({})
         .exec(function (err, users) {
             if (err) {
@@ -39,6 +40,8 @@ routes.loginPage = function(req, res) {
 routes.login = function(req, res) {
     var name = req.body.name;
     console.log(name);
+    // the whole user object should be stored in req.user for you by passport
+    // it also gets cleared on logout which is convienent
     req.session.name = name;
     User.update({name: name}, {name: name}, {upsert: true}, function (err, user) {
         if (err) {
