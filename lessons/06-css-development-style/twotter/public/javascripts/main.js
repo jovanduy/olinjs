@@ -77,6 +77,7 @@ var onSuccessTwote = function (data, status) {
     $twote.find('p.author').html(data.author);
     $twote.css('display', "block");
     $("#twoteList").prepend($twote);
+    //Nice, a bunch of people forgot to do this
     resetButtons();
 }
 
