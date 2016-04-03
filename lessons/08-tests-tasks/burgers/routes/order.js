@@ -1,6 +1,6 @@
 var Ingredient = require('../models/ingredientModel.js');
 var Order = require('../models/orderModel.js');
- 
+
 var routes = {};
 
 routes.orderPage = function (req, res) {
@@ -17,7 +17,7 @@ routes.orderPage = function (req, res) {
 routes.place = function (req, res) {
     var order = req.body;
     order.ingredients = order["ingredients[]"];
-    console.log(order.ingredients);
+    // make sure to clear up your debugging console.logs for production!
     order.completed = false;
     var newOrder = Order(order);
     newOrder.save(function (err) {
