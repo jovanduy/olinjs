@@ -28,53 +28,54 @@ describe("The app", function() {
       .get('/notaroute')
       .expect(404, done);
   });
-  
+
   it('should respond with 200 OK on GET /order', function(done) {
       request(app)
         .get('/order')
         .expect(200, done);
   });
-  
+
   it('should respond with 200 OK on GET /kitchen', function(done) {
       request(app)
         .get('/kitchen')
         .expect(200, done);
   });
-  
+
+  // awesome that you're testing posts!
   it('should respond with 200 OK on POST /ingredients/add', function(done) {
       request(app)
         .post('/ingredients/add')
         .expect(200, done);
   });
-  
+
   it('should respond with 200 OK on POST /ingredients/outOfStock', function(done) {
       request(app)
         .post('/ingredients/outOfStock')
         .expect(200, done);
   });
-  
+
   it('should respond with 200 OK on POST /ingredients/edit', function(done) {
       request(app)
         .post('/ingredients/edit')
         .expect(200, done);
   });
-  
+
   it('should respond with 200 OK on POST /ingredients/restock', function(done) {
       request(app)
         .post('/ingredients/restock')
         .expect(200, done);
   });
-  
+
   it('should respond with 200 OK on POST /order/placeOrder', function(done) {
       request(app)
         .post('/order/placeOrder')
         .expect(200, done);
   });
-  
+
   it('should respond with 200 OK on POST /kitchen/completeOrder', function(done) {
       request(app)
         .post('/kitchen/completeOrder')
         .expect(200, done);
   });
-  
+
 });
