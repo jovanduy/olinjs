@@ -19,6 +19,7 @@ var onCompleteSuccess = function (data, status) {
     }
 }
 
+// I cannot complete more than one order without refreshing the page -- take a look at that.
 $complete.click(function () {
     var id = $complete.attr('id');
     $list = $('.' + id);
